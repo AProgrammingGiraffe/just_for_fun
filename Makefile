@@ -1,16 +1,16 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-all: output
+all: main
 
 output: main.c
-	@$(CC) $(CFLAGS) main.c -o output
+	@$(CC) $(CFLAGS) main.c -o main
 
-test: output
-	@./output
-	@rm -f output
+test: main
+	@./main
+	@rm -f main
 
 clean:
-	@rm -f output
+	@rm -f main
 
 .PHONY: all test clean
