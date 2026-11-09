@@ -3,19 +3,25 @@
 #include <stdio.h>
 #include <time.h>
 
-void sorter(int size /*needs to be computer so 0..n*/ /*, int max*/, int arr[])
+void bubblesort(int size, int arr[])
 {
     int temp;
+    bool swapped;
     for (int j = 0; j < (size - 1); j++)
     {
-        for (int i = 0; i < size - j; i++)
+        for (int i = 0; i < size - j - 1; i++)
         {
             if (arr[i] > arr[i + 1])
             {
                 temp = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = temp;
+                swapped = true;
             }
+        }
+        if (swapped == false)
+        {
+            break;
         }
     }
 };
@@ -34,7 +40,7 @@ int main()
     {
         printf("%d ", arr[i]);
     }
-    sorter(99 /*bit wise*/, /* 2,*/ arr);
+    bubblesort(100, arr);
 
     printf("\n\n");
 
